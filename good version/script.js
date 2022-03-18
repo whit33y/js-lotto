@@ -48,6 +48,7 @@ function check(){
     // document.getElementById('shots').innerHTML = losowe
     if(list.length === 6){
     document.getElementById('yourShots').innerHTML = list
+    document.getElementById('helper').innerHTML = 'Your good shots'
     document.getElementById('goodShots').innerHTML = trafione
     for(let i=0; i<6; i++){
         document.getElementById("status" + i)
