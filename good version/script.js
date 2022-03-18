@@ -20,10 +20,10 @@ function check(){
              continue;
          if (list[i] == list[j]) {
          document.getElementById("status" + i)
-           .innerHTML = "Duplicated values, your ticket is invalid!";
+           .innerHTML = "Duplicated values!";
            list.push('false')
          document.getElementById("status" + j)
-          .innerHTML = "Duplicated values, your ticket is invalid!";
+          .innerHTML = "Duplicated values!";
               }
           
           }   
@@ -47,8 +47,9 @@ function check(){
     // list.push(parseInt(number0.value), parseInt(number1.value), parseInt(number2.value))
     // document.getElementById('shots').innerHTML = losowe
     if(list.length === 6){
+    document.getElementById('onehelper').innerHTML = 'Your numbers'
     document.getElementById('yourShots').innerHTML = list
-    document.getElementById('helper').innerHTML = 'Your good shots'
+    document.getElementById('helper').innerHTML = 'Your hits'
     document.getElementById('goodShots').innerHTML = trafione
     for(let i=0; i<6; i++){
         document.getElementById("status" + i)
