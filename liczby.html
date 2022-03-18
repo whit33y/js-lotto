@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strzaly</title>
+</head>
+<body>
+    <div class="container">
+    <form id="form">
+        <input type="number" min="1" max="49" required id="one" placeholder="1 to 49">
+        <input type="number" min="1" max="49" required id="two" placeholder="1 to 49">
+        <input type="number" min="1" max="49" required id="three" placeholder="1 to 49">
+        <input type="number" min="1" max="49" required id="four" placeholder="1 to 49">
+        <input type="number" min="1" max="49" required id="five" placeholder="1 to 49">
+        <input type="number" min="1" max="49" required id="six" placeholder="1 to 49">
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+        let form = document.getElementById('form')
+
+        form.addEventListener('submit',function(event){
+            event.preventDefault()
+            const one = document.getElementById('one').value
+            const two = document.getElementById('two').value
+            const three = document.getElementById('three').value
+            const four = document.getElementById('four').value
+            const five = document.getElementById('five').value
+            const six = document.getElementById('six').value
+            console.log(one,two,three,four,five,six)
+        })
+    </script>
+</div>
+</body>
+</html>

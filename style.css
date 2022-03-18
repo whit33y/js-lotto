@@ -1,0 +1,68 @@
+html, 
+body {
+    height: 100%;
+    background-color: blanchedalmond;
+}
+.container{
+    display: flex;
+    justify-content: center;
+}
+h1{
+    border: 2px solid black;
+    background-color: aquamarine;
+}
+#oneS{
+    margin: 30px;
+    padding: 30px;
+}
+#twoS{
+    margin: 30px;
+    padding: 30px;
+}
+#threeS{
+    margin: 30px;
+    padding: 30px;
+}
+#fourS{
+    margin: 30px;
+    padding: 30px;
+}
+#fiveS{
+    margin: 30px;
+    padding: 30px;
+}
+#sixS{
+    margin: 30px;
+    padding: 30px;
+}
+#powtorzenia{
+    display:flex;
+    justify-content: center;
+}
+h2{
+    text-align: center;
+}
+#one{
+    margin: 30px;
+    padding: 30px;
+}
+#two{
+    margin: 30px;
+    padding: 30px;
+}
+#three{
+    margin: 30px;
+    padding: 30px;
+}
+#four{
+    margin: 30px;
+    padding: 30px;
+}
+#five{
+    margin: 30px;
+    padding: 30px;
+}
+#six{
+    margin: 30px;
+    padding: 30px;
+}
