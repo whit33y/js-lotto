@@ -1,64 +1,66 @@
 function mathRandom(){
 return Math.ceil(Math.random()*49)
 }
-let losowe = []
+let randomSix = []
 for(let i=0; i<6; i++){
 x = mathRandom();
-if(losowe.includes(x)){i--}
-else{losowe.push(x)}
+if(randomSix.includes(x)){i--}
+else{randomSix.push(x)}
 }
-console.log(losowe)
+console.log(randomSix)
+
 let form = document.getElementById('form')
-function check(){
-    list = []
-    for(let i=0; i<6; i++){
-      list[i] = document.getElementById('number'+i).value
-    }
+function addAndCheck(){
+    yourNumbers = []
+    for(let i=0; i<6; i++){yourNumbers[i] = document.getElementById('number'+i).value}
     for (i = 0; i < 6; i++) {
         for (j = i + 1; j < 6; j++) {
-            if (i == j || list[i] == "" || list[j] == "") 
+            if (i == j || yourNumbers[i] == "" || yourNumbers[j] == "") 
              continue;
-         if (list[i] == list[j]) {
+         if (yourNumbers[i] == yourNumbers[j]) {
          document.getElementById("status" + i)
            .innerHTML = "Duplicated values!";
-           list.push('false')
+           yourNumbers.push('false')
          document.getElementById("status" + j)
           .innerHTML = "Duplicated values!";
               }
-          
           }   
       }
-      trafione = 0
-      if(list.length === 6){
+      hits = 0
+      if(yourNumbers.length === 6){
+        document.getElementById('onehelper').innerHTML = 'Your numbers'
           for(let i=0; i<6; i++){
-              list[i] = parseInt(list[i])
+              yourNumbers[i] = parseInt(yourNumbers[i])
           }
+          document.getElementById('yourShots').innerHTML = yourNumbers
           for(let j=0; j<6; j++){
               for(let k=0;k<6;k++){
-                  if(list[j]===losowe[k]){
-                      trafione++
+                  if(yourNumbers[j]===randomSix[k]){
+                    document.getElementById("number"+j).style.borderColor="green"
+                    document.getElementById("number"+j).style.backgroundColor="green"
+                    document.getElementById("number"+j).style.color="white"
+                    document.getElementById("number"+j).disabled=true
+                      hits++
+                      break
+                  }
+                  else{
+                    document.getElementById("number"+j).style.borderColor="red"
                   }
               }
           }
-      }
-    // list.pop()
-    // list.pop()
-    // list.pop()
-    // list.push(parseInt(number0.value), parseInt(number1.value), parseInt(number2.value))
-    // document.getElementById('shots').innerHTML = losowe
-    if(list.length === 6){
-    document.getElementById('onehelper').innerHTML = 'Your numbers'
-    document.getElementById('yourShots').innerHTML = list
-    document.getElementById('helper').innerHTML = 'Your hits'
-    document.getElementById('goodShots').innerHTML = trafione
-    for(let i=0; i<6; i++){
-        document.getElementById("status" + i)
-           .innerHTML = "";
-    }
-    }
+          document.getElementById('helper').innerHTML = 'Your hits'
+          document.getElementById('goodShots').innerHTML = hits
+          if(hits===6){
+            document.getElementById('goodShots').innerHTML = 'YOU WIN!'
+          }
+          for(let i=0; i<6; i++){
+            document.getElementById("status" + i)
+               .innerHTML = "";
+        }
+      } 
 }
 form.addEventListener('submit',function(event){
     event.preventDefault()
-    check()
+    addAndCheck()
     
 })

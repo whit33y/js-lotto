@@ -4,6 +4,7 @@ body {
     background-color: blanchedalmond;
 }
 #top{
+    font-size: 50px;
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -17,7 +18,10 @@ body {
 }
 input{
     margin: 10px;
-    padding: 10px;
+    padding: 20px;
+    width: 50px;
+    border: 2px solid black;
+    text-align: center;
 }
 .container{
     display: flex;
